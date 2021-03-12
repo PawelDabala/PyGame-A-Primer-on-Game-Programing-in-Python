@@ -33,14 +33,21 @@ while running:
             running = False
 
     screen.fill((255, 255, 255))
-
     surf = pygame.Surface((50, 50))
+    #Put the center of surf at the center of the display
+
+    surf_center = (
+        (SCREEN_WIDTH-surf.get_width())/2,
+        (SCREEN_HEIGHT-surf.get_height())/2
+    )
+
+
 
     surf.fill((0, 0, 0))
     rect = surf.get_rect()
 
     #This line says "Draw surf onto the screen at the center"
-    screen.blit(surf, (SCREEN_WIDTH/2, SCREEN_HEIGHT/ 2))
+    screen.blit(surf, surf_center)
     pygame.display.flip()
 
-    
+
