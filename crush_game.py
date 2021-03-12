@@ -31,3 +31,16 @@ while running:
         # Did the user click the window close button? If so, stop the loop.
         elif event.type == QUIT:
             running = False
+
+    screen.fill((255, 255, 255))
+
+    surf = pygame.Surface((50, 50))
+
+    surf.fill((0, 0, 0))
+    rect = surf.get_rect()
+
+    #This line says "Draw surf onto the screen at the center"
+    screen.blit(surf, (SCREEN_WIDTH/2, SCREEN_HEIGHT/ 2))
+    pygame.display.flip()
+
+    
