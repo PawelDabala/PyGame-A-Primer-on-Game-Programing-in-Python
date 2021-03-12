@@ -15,6 +15,19 @@ pygame.init()
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
-#Create the screen object
+# Create the screen object
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
+running = True
+
+while running:
+    # Look in pygame.event.get()
+    for event in pygame.event.get():
+        # Did the user hit key ?
+        if event.type == KEYDOWN:
+            # Was it the Escape key? If so, stop the loop.
+            if event.key == K_ESCAPE:
+                running = False
+        # Did the user click the window close button? If so, stop the loop.
+        elif event.type == QUIT:
+            running = False
